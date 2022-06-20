@@ -24,13 +24,15 @@ namespace Groupe6Job {
         }
 
         private void OnTick(Object sender, EventArgs e) {
-            if (Game.Player.Character.Position.DistanceTo(StartJobPos) <= 5) {
-                HelpText.Display("Press ~INPUT_CONTEXT~ to start your shift");
+            if (!Working) {
+                if (Game.Player.Character.Position.DistanceTo(StartJobPos) <= 5) {
+                    HelpText.Display("Press ~INPUT_CONTEXT~ to start your shift");
 
-                if (Game.IsControlJustPressed(0, GTA.Control.Context)) {
-                    StartJobBlip = BlipManager.RemoveBlip(StartJobBlip);
-                    Truck = World.CreateVehicle();
-                    Working = true;
+                    if (Game.IsControlJustPressed(0, GTA.Control.Context)) {
+                        StartJobBlip = BlipManager.RemoveBlip(StartJobBlip);
+                        Truck = World.CreateVehicle();
+                        Working = true;
+                    }
                 }
             }
 
