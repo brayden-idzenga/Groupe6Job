@@ -7,7 +7,7 @@ namespace Groupe6Job.Util {
         public static Blip CreateBlip(Blip b, Vector3 pos) {
             b = World.CreateBlip(pos);
             if (b.Exists()) {
-                b.Sprite = BlipSprite.CCTV;
+                b.Sprite = BlipSprite.CashRegister;
                 b.Color = BlipColor.Blue;
                 b.Name = "Groupe 6 Job";
             }
